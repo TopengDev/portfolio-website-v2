@@ -91,24 +91,14 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-white/5">
-      {/* Animated background */}
+      {/* Static background for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute w-96 h-96 rounded-full bg-cyan-500/5 blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity }}
+        <div
+          className="absolute w-96 h-96 rounded-full bg-cyan-500/5 blur-2xl"
           style={{ top: '10%', left: '10%' }}
         />
-        <motion.div
-          className="absolute w-96 h-96 rounded-full bg-blue-500/5 blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{ duration: 25, repeat: Infinity }}
+        <div
+          className="absolute w-96 h-96 rounded-full bg-blue-500/5 blur-2xl"
           style={{ bottom: '10%', right: '10%' }}
         />
       </div>
@@ -222,7 +212,8 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="/Christopher_Indrawan.pdf"
+                  download="Christopher_Indrawan_Resume.pdf"
                   className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center gap-2 group"
                 >
                   <FileText className="w-4 h-4" />

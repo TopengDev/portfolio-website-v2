@@ -30,16 +30,30 @@ export function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   useEffect(() => {
+    let rafId: number;
+    let lastX = 0;
+    let lastY = 0;
+
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+      lastX = e.clientX;
+      lastY = e.clientY;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          setMousePosition({
+            x: lastX,
+            y: lastY,
+          });
+          rafId = 0;
+        });
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () =>
+    return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -49,8 +63,8 @@ export function HeroSection() {
     }
   };
 
-  // Generate floating particles
-  const particles = Array.from({ length: 50 }, (_, i) => ({
+  // Generate floating particles (reduced for performance)
+  const particles = Array.from({ length: 15 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
@@ -66,12 +80,13 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ background: "#0D0D0D" }}
     >
-      {/* Custom cursor follower */}
+      {/* Custom cursor follower - optimized */}
       <motion.div
         className="fixed w-8 h-8 border-2 border-cyan-400 rounded-full pointer-events-none z-50 mix-blend-difference"
         style={{
           left: 0,
           top: 0,
+          willChange: "transform",
         }}
         animate={{
           x: mousePosition.x - 16,
@@ -104,8 +119,8 @@ export function HeroSection() {
         />
       </motion.div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Floating particles - optimized */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {particles.map((particle) => (
           <motion.div
             key={particle.id}
@@ -115,6 +130,7 @@ export function HeroSection() {
               height: particle.size,
               left: `${particle.x}%`,
               top: `${particle.y}%`,
+              willChange: "transform, opacity",
             }}
             animate={{
               y: [0, -30, 0],
@@ -124,87 +140,55 @@ export function HeroSection() {
               duration: particle.duration,
               repeat: Infinity,
               delay: particle.delay,
+              ease: "linear",
             }}
           />
         ))}
       </div>
 
-      {/* Large glowing orbs */}
+      {/* Large glowing orbs - optimized blur */}
       <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full blur-3xl opacity-20"
+        className="absolute w-[400px] h-[400px] rounded-full blur-2xl opacity-15"
         style={{
           background:
             "radial-gradient(circle, #00FFFF, transparent 70%)",
           left: "20%",
           top: "20%",
+          willChange: "transform",
         }}
         animate={{
-          scale: [1, 1.2, 1],
-          x: [0, 50, 0],
-          y: [0, -50, 0],
+          scale: [1, 1.15, 1],
+          x: [0, 30, 0],
+          y: [0, -30, 0],
         }}
         transition={{
-          duration: 15,
+          duration: 20,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: "linear",
         }}
       />
       <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full blur-3xl opacity-20"
+        className="absolute w-[400px] h-[400px] rounded-full blur-2xl opacity-15"
         style={{
           background:
             "radial-gradient(circle, #007AFF, transparent 70%)",
           right: "20%",
           bottom: "20%",
+          willChange: "transform",
         }}
         animate={{
-          scale: [1, 1.3, 1],
-          x: [0, -50, 0],
-          y: [0, 50, 0],
+          scale: [1, 1.15, 1],
+          x: [0, -30, 0],
+          y: [0, 30, 0],
         }}
         transition={{
-          duration: 18,
+          duration: 25,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: "linear",
         }}
       />
 
-      {/* Parallax layers */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          x: useTransform(
-            scrollYProgress,
-            [0, 1],
-            ["0%", "-10%"],
-          ),
-          y: useTransform(
-            scrollYProgress,
-            [0, 1],
-            ["0%", "20%"],
-          ),
-        }}
-      >
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-cyan-400/20 rounded-full"
-            style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + i * 10}%`,
-            }}
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: i * 0.5,
-            }}
-          />
-        ))}
-      </motion.div>
+      {/* Simplified parallax layers - removed for performance */}
 
       {/* Main content */}
       <motion.div
@@ -289,12 +273,17 @@ export function HeroSection() {
                 className="gradient-text absolute inset-0"
                 style={{
                   fontSize: "clamp(3rem, 8vw, 6rem)",
-                  transform: `translate(${i * 2}px, ${i * 2}px)`,
                   opacity: 0.1 - i * 0.03,
                   zIndex: -i,
                 }}
                 animate={{
-                  transform: `translate(${i * 2 + Math.sin(Date.now() / 1000) * 2}px, ${i * 2 + Math.cos(Date.now() / 1000) * 2}px)`,
+                  x: [i * 2, i * 2 + 2, i * 2],
+                  y: [i * 2, i * 2 + 2, i * 2],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
                 }}
               >
                 Christopher
@@ -324,41 +313,13 @@ export function HeroSection() {
             </motion.h1>
           </motion.div>
 
-          {/* Floating decorative elements */}
-          <motion.div
-            className="absolute -left-20 top-1/2 -translate-y-1/2"
-            animate={{
-              rotate: 360,
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              rotate: {
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-              },
-              scale: { duration: 3, repeat: Infinity },
-            }}
-          >
-            <Code2 className="w-12 h-12 text-cyan-400/30" />
-          </motion.div>
-          <motion.div
-            className="absolute -right-20 top-1/2 -translate-y-1/2"
-            animate={{
-              rotate: -360,
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              rotate: {
-                duration: 15,
-                repeat: Infinity,
-                ease: "linear",
-              },
-              scale: { duration: 2.5, repeat: Infinity },
-            }}
-          >
-            <Zap className="w-12 h-12 text-blue-400/30" />
-          </motion.div>
+          {/* Simplified decorative elements */}
+          <div className="absolute -left-20 top-1/2 -translate-y-1/2 opacity-30">
+            <Code2 className="w-12 h-12 text-cyan-400" />
+          </div>
+          <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-30">
+            <Zap className="w-12 h-12 text-blue-400" />
+          </div>
         </div>
 
         {/* Animated role text */}

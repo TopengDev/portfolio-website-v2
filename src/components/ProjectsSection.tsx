@@ -18,115 +18,150 @@ import { Button } from "./ui/button";
 const projects = [
   {
     id: 1,
-    title: "DeFi Trading Platform",
-    tagline:
-      "Decentralized exchange with advanced trading features",
+    title: "ExecFi",
+    tagline: "AI Powered DeFi and smart wallet platform",
     image:
-      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcnlwdG8lMjB0cmFkaW5nfGVufDF8fHx8MTc2MDY4Mjg3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-    stack: ["Next.js", "Solidity", "Web3.js", "Hardhat"],
-    role: "Web3 Developer",
-    duration: "4 months",
+      "/execfi_thumbnail.png",
+    stack: ["Next.js", "Solidity", "Privy", "Biconomy", "Wagmi"],
+    role: "Fullstack & Web3 Developer",
+    duration: "Ongoing",
     featured: true,
     category: "web3",
     color: "#00FFFF",
     description:
-      "Built a decentralized trading platform with smart contract integration, real-time price feeds, and liquidity pools. Implemented automated market maker (AMM) algorithms and yield farming mechanisms.",
-    impact: "$2M+ in total value locked, 5K+ active traders",
-    liveUrl: "#",
-    githubUrl: "#",
+      "A next-gen AI Powered DeFi and smart wallet platform designed to bring Web3 usability to everyone. Exploring account abstraction, smart wallets, and AI-driven finance tools to bridge Web2 usability and Web3 autonomy.",
+    impact: "Next-generation DeFi platform with enhanced UX",
+    liveUrl: "https://execfi.xyz",
+    githubUrl: "https://github.com/TopengDev",
   },
   {
     id: 2,
-    title: "E-Commerce Platform",
+    title: "DigitalPartnership",
     tagline:
-      "Modern shopping experience with real-time inventory",
+      "Enterprise integration portal for Indosat Ooredoo Hutchison",
     image:
-      "https://images.unsplash.com/photo-1694599048261-a1de00f0117e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwZGVzaWdufGVufDF8fHx8MTc2MDY4Mjg3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
+      "ioh_thumbnail.png",
+    stack: ["React", "TypeScript", "Node.js", "PostgreSQL"],
     role: "Fullstack Developer",
-    duration: "3 months",
+    duration: "Production",
     featured: true,
     category: "fullstack",
     color: "#007AFF",
     description:
-      "Built a high-performance e-commerce platform with advanced filtering, real-time inventory management, and seamless payment integration. Achieved 40% faster page loads through optimized image delivery and server-side rendering.",
-    impact:
-      "2.5x increase in conversion rate, 60% reduction in bounce rate",
-    liveUrl: "#",
-    githubUrl: "#",
+      "Indosat Ooredoo Hutchison's official digital partnership portal for enterprise integrations. Built to streamline digital partnerships and enterprise collaborations with scalable architecture.",
+    impact: "Serving thousands of enterprise partners nationwide",
+    liveUrl: "https://ioh.co.id/portal/id/ioh-digitalpartnershipsportal",
+    githubUrl: "https://github.com/TopengDev",
   },
   {
     id: 3,
-    title: "NFT Marketplace",
-    tagline: "Create, buy, and sell digital assets",
+    title: "KNNEK",
+    tagline: "Web3-native community platform",
     image:
-      "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZnQlMjBhcnR8ZW58MXx8fHwxNzYwNzI0OTc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    stack: ["React", "Solidity", "IPFS", "Ethers.js"],
+      "knnek_thumbnail.png",
+    stack: ["Next.js", "Solidity", "WebSocket", "Ethers.js"],
     role: "Web3 Developer",
-    duration: "5 months",
+    duration: "6 months",
     featured: false,
     category: "web3",
     color: "#9D00FF",
     description:
-      "Developed a full-featured NFT marketplace with minting, auctions, and royalty distribution. Integrated IPFS for decentralized storage and implemented ERC-721 and ERC-1155 standards.",
-    impact: "10K+ NFTs minted, $500K+ in trading volume",
-    liveUrl: "#",
-    githubUrl: "#",
+      "A Web3-native community platform connecting crypto enthusiasts through real-time chat. Built with decentralized authentication and blockchain integration for enhanced privacy and security.",
+    impact: "Connecting crypto enthusiasts with Web3-first approach",
+    liveUrl: "https://knnek.com/",
+    githubUrl: "https://github.com/TopengDev",
   },
   {
     id: 4,
-    title: "Analytics Dashboard",
-    tagline: "Data visualization for enterprise insights",
+    title: "AI Resume Analyzer",
+    tagline: "AI-powered resume compatibility analyzer",
     image:
-      "https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzYwNzI0OTc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    stack: ["React", "NestJS", "Redis", "Recharts"],
-    role: "Lead Developer",
-    duration: "4 months",
+      "resumind_thumbnail.png",
+    stack: ["React", "NestJS", "OpenAI", "NLP"],
+    role: "Fullstack Developer",
+    duration: "3 months",
     featured: false,
     category: "fullstack",
     color: "#FF3D71",
     description:
-      "Developed a comprehensive analytics dashboard processing millions of data points daily. Implemented efficient caching strategies and real-time data streaming for instant insights.",
-    impact: "Reduced report generation time from 45s to 3s",
-    liveUrl: "#",
-    githubUrl: "#",
+      "An AI-powered resume analyzer that measures compatibility with job descriptions using NLP. Provides detailed feedback and recommendations to improve resume match rates with job requirements.",
+    impact: "Helping job seekers optimize their applications",
+    liveUrl: "https://resumind.topengdev.com",
+    githubUrl: "https://github.com/TopengDev/ai_resume_analyzer",
   },
   {
     id: 5,
-    title: "Design System",
-    tagline: "Component library for consistent UX",
+    title: "E-Commerce Platform",
+    tagline: "Multi-purpose ready e-commerce solution",
     image:
-      "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzYwNjUwMzM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    stack: ["React", "Storybook", "TailwindCSS", "Figma"],
-    role: "UI Designer",
-    duration: "3 months",
+      "e-commerce_thumbnail.png",
+    stack: ["Next.js", "TypeScript", "TailwindCSS", "Stripe"],
+    role: "Fullstack Developer",
+    duration: "2 months",
     featured: false,
-    category: "design",
+    category: "fullstack",
     color: "#00D9FF",
     description:
-      "Created a comprehensive design system with 50+ reusable components, detailed documentation, and design tokens. Used by 10+ teams across the organization.",
-    impact: "70% reduction in design-to-dev handoff time",
-    liveUrl: "#",
-    githubUrl: "#",
+      "e-commerce_thumbnail.png",
+    impact: "Production-ready e-commerce template",
+    liveUrl: "https://simple-e-commerce.topengdev.com",
+    githubUrl: "https://github.com/TopengDev/Simple-E-Commerce",
   },
   {
     id: 6,
-    title: "SaaS Collaboration Tool",
-    tagline: "Team productivity reinvented",
+    title: "Mafia Code",
+    tagline: "Developer community for SaaS builders",
     image:
-      "https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWFzJTIwcGxhdGZvcm0lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzYwNzE5NDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    stack: ["Next.js", "NestJS", "WebSocket", "Docker"],
+      "mcc_thumbnail.png",
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
     role: "Fullstack Developer",
-    duration: "6 months",
+    duration: "4 months",
     featured: false,
     category: "fullstack",
     color: "#FFD60A",
     description:
-      "Built a real-time collaboration platform with workspace management, live document editing, and video conferencing capabilities. Scaled to support 10K+ concurrent users.",
-    impact: "Increased team productivity by 35%",
-    liveUrl: "#",
-    githubUrl: "#",
+      "An open developer community for SaaS and product builders. Platform for developers to connect, collaborate, and share knowledge about building and scaling SaaS products.",
+    impact: "Growing community of SaaS builders",
+    liveUrl: "https://mafiacode.vercel.app",
+    githubUrl: "https://github.com/TopengDev",
   },
+  {
+    id: 7,
+    title: "Startup Landing Page",
+    tagline: "Modern & sophisticated startup company landing page",
+    image:
+    "startuppage_thumbnail.png",
+    stack: ["html5", "tailwindcss"],
+    role: "Frontend Developer",
+    duration: "A Day",
+    featured: false,
+    category: "design",
+    color: "#FFD60A",
+    description:
+    "Modern & sophisticated startup company landing page design",
+    impact: "Accelerate your growth with us.",
+    liveUrl: "https://startuppage.topengdev.com",
+    githubUrl: "https://github.com/TopengDev",
+  },{
+    id: 8,
+    title: "Tech Company Landing Page",
+    tagline: "Modern & sophisticated tech company landing page",
+    image:
+    "techpage_thumbnail.png",
+    stack: ["html5", "tailwindcss"],
+    role: "Frontend Developer",
+    duration: "A Day",
+    featured: false,
+    category: "design",
+    color: "#FFD60A",
+    description:
+    "Modern & sophisticated tech company landing page design",
+    impact: "Build with the future.",
+    liveUrl: "https://techpage.topengdev.com",
+    githubUrl: "https://github.com/TopengDev",
+  },
+
+   
 ];
 
 const categories = [
@@ -165,58 +200,38 @@ export function ProjectsSection() {
       id="projects"
       className="py-32 px-6 relative overflow-hidden"
     >
-      {/* Animated background grid */}
+      {/* Static background grid for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px)
+              linear-gradient(rgba(0, 255, 255, 0.02) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 255, 255, 0.02) 1px, transparent 1px)
             `,
             backgroundSize: "100px 100px",
-          }}
-          animate={{
-            backgroundPosition: ["0px 0px", "100px 100px"],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
           }}
         />
       </div>
 
-      {/* Floating gradient orbs */}
-      <motion.div
-        className="absolute w-96 h-96 rounded-full blur-3xl opacity-10"
+      {/* Simplified gradient orbs */}
+      <div
+        className="absolute w-96 h-96 rounded-full blur-2xl opacity-10"
         style={{
           background:
             "radial-gradient(circle, #00FFFF, transparent 70%)",
           top: "20%",
           left: "10%",
         }}
-        animate={{
-          x: [0, 100, 0],
-          y: [0, -50, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{ duration: 20, repeat: Infinity }}
       />
-      <motion.div
-        className="absolute w-96 h-96 rounded-full blur-3xl opacity-10"
+      <div
+        className="absolute w-96 h-96 rounded-full blur-2xl opacity-10"
         style={{
           background:
             "radial-gradient(circle, #007AFF, transparent 70%)",
           bottom: "20%",
           right: "10%",
         }}
-        animate={{
-          x: [0, -100, 0],
-          y: [0, 50, 0],
-          scale: [1, 1.3, 1],
-        }}
-        transition={{ duration: 25, repeat: Infinity }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -287,11 +302,11 @@ export function ProjectsSection() {
               onHoverEnd={() => setHoveredId(null)}
               onClick={() => setSelectedProject(project)}
             >
-              {/* 3D Glow effect */}
+              {/* Optimized Glow effect */}
               <motion.div
-                className="absolute -inset-6 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute -inset-4 rounded-3xl blur-2xl opacity-0 group-hover:opacity-80 transition-opacity duration-300"
                 style={{
-                  background: `radial-gradient(circle at center, ${project.color}60, transparent 70%)`,
+                  background: `radial-gradient(circle at center, ${project.color}40, transparent 70%)`,
                 }}
               />
 
@@ -544,11 +559,11 @@ export function ProjectsSection() {
               onClick={() => setSelectedProject(project)}
               layout
             >
-              {/* Glow */}
+              {/* Optimized Glow */}
               <motion.div
-                className="absolute -inset-3 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute -inset-2 rounded-2xl blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-300"
                 style={{
-                  background: `radial-gradient(circle at center, ${project.color}40, transparent 70%)`,
+                  background: `radial-gradient(circle at center, ${project.color}30, transparent 70%)`,
                 }}
               />
 

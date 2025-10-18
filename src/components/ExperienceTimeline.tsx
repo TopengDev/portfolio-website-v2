@@ -60,7 +60,7 @@ const experiences = [
   {
     company: "Indosat",
     role: "Frontend Developer",
-    period: "2021 - 2022",
+    period: "2023",
     type: "Full-time",
     achievements: [
       "Developed customer-facing portal handling 50K+ daily visits",

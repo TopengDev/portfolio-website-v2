@@ -30,7 +30,7 @@ const contactMethods = [
   {
     icon: Linkedin,
     title: "LinkedIn",
-    value: "linkedin.com/in/christopher-indrawan",
+    value: "linkedin.com/in/christopher-indrawan-dev",
     href: "https://linkedin.com/in/christopher-indrawan-dev",
     color: "#007AFF",
     description: "Professional networking",
