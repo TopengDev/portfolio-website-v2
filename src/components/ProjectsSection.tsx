@@ -36,6 +36,25 @@ const projects = [
   },
   {
     id: 2,
+    title: "HireMeUp",
+    tagline:
+      "AI-powered recruitment platform connecting talents with opportunities",
+    image:
+      "hiremeup_thumbnail.png",
+    stack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "OpenAI"],
+    role: "Fullstack Developer",
+    duration: "Ongoing",
+    featured: true,
+    category: "fullstack",
+    color: "#FF6B35",
+    description:
+      "An innovative AI-powered recruitment platform that revolutionizes the hiring process by intelligently matching candidates with job opportunities. Features advanced resume parsing, skill assessment, and automated candidate screening to streamline recruitment workflows.",
+    impact: "Transforming recruitment with AI-driven talent matching",
+    liveUrl: "https://hiremeup.topengdev.com",
+    githubUrl: "https://github.com/TopengDev",
+  },
+  {
+    id: 9,
     title: "DigitalPartnership",
     tagline:
       "Enterprise integration portal for Indosat Ooredoo Hutchison",
@@ -44,7 +63,7 @@ const projects = [
     stack: ["React", "TypeScript", "Node.js", "PostgreSQL"],
     role: "Fullstack Developer",
     duration: "Production",
-    featured: true,
+    featured: false,
     category: "fullstack",
     color: "#007AFF",
     description:

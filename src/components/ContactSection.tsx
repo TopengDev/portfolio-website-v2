@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   Sparkles,
   MessageSquare,
-  Calendar,
   Zap,
 } from "lucide-react";
 import { Button } from "./ui/button";
@@ -42,14 +41,6 @@ const contactMethods = [
     href: "https://github.com/topengdev",
     color: "#00D9FF",
     description: "Check out my work",
-  },
-  {
-    icon: Calendar,
-    title: "Schedule Call",
-    value: "Book a meeting",
-    href: "#",
-    color: "#9D00FF",
-    description: "Let's discuss your project",
   },
 ];
 
@@ -84,8 +75,21 @@ export function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // Construct email parameters
+    const emailTo = "topengdev@outlook.com";
+    const emailSubject = encodeURIComponent(formData.subject);
+    const emailBody = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+
+    // Create mailto link
+    const mailtoLink = `mailto:${emailTo}?subject=${emailSubject}&body=${emailBody}`;
+
+    // Small delay for UX
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    // Open email client
+    window.location.href = mailtoLink;
 
     setIsSubmitting(false);
     setIsSubmitted(true);
